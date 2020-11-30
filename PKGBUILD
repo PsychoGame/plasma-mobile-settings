@@ -2,7 +2,7 @@
 
 pkgname=plasma-mobile-settings
 pkgver=20201130
-pkgrel=2
+pkgrel=3
 arch=('any')
 url="https://gitlab.manjaro.org/manjaro-arm/packages/community/plasma-mobile/$pkgname"
 license=('GPL')
@@ -35,5 +35,5 @@ package() {
     install -Dm644 kwinrc $xdg/kwinrc
     install -Dm644 sddm.conf $pkgdir/etc/sddm.conf
     install -Dm755 packagekit-offline.sh $pkgdir/etc/profile.d/packagekit-offline.sh
-    install -Dm755 ofono-fast-dormancy.sh $pkgdir/lib/systemd/system-sleep/ofono-fast-dormancy.sh
+    install -Dm755 ofono-fast-dormancy.sh $pkgdir/usr/lib/systemd/system-sleep/ofono-fast-dormancy.sh
 }

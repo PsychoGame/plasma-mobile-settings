@@ -1,12 +1,13 @@
 # Maintainer: Bernhard Landauer <oberon@manjaro.org>
 
 pkgname=plasma-mobile-settings
-pkgver=20201201
-pkgrel=2
+pkgver=20201202
+pkgrel=1
 arch=('any')
 url="https://gitlab.manjaro.org/manjaro-arm/packages/community/plasma-mobile/$pkgname"
 license=('GPL')
 pkgdesc='Settings files for Plasma mobile'
+depends=('accountsservice' 'noto-fonts' 'breeze' 'breeze-gtk')
 makedepends=('git')
 source=('applications-blacklistrc'
     'disable-random-mac.conf'
@@ -16,7 +17,8 @@ source=('applications-blacklistrc'
     'packagekit-offline.sh'
     'ofono-fast-dormancy.sh'
     '91_plasma-mobile.gschema.override'
-    'plasmamobile.json')
+    'plasmamobile.json'
+    'settings.ini')
 sha256sums=('bcbe9a3e44016c71811c4323d14dbd79f259b93bae0830cfc26ebfdfdf6e1381'
             '490bd6bda16408da9bd9ac331f5dc344a4874f04f2b257a0a1083b969f7c857a'
             '45b91431730349d796e4452faaa98a467b54e5d3a7bb32e1490944ed183b30be'
@@ -25,7 +27,8 @@ sha256sums=('bcbe9a3e44016c71811c4323d14dbd79f259b93bae0830cfc26ebfdfdf6e1381'
             'e879ca7b637199e9ab5edd04c1b0c0da6b775ee925c21435f14fad426abe7e62'
             '187bd69ff45ddedb5a2f2152792bd65c0c46ee0082239e86a0d0aab654327617'
             'ef337ce48ab85779d7cfcb54c3979a941856ddb1db9c85bf3533bb273611136a'
-            '42db6e099ab56aa4f6c01107fe83897a059bc371a389379cd3c260d4ab8fd2bc')
+            '42db6e099ab56aa4f6c01107fe83897a059bc371a389379cd3c260d4ab8fd2bc'
+            'e3e671c730f7a4ed54011a1152a54e5ce11e6092850c379deb5641d88b5463bd')
 
 pkgver() {
     date +%Y%m%d
@@ -42,4 +45,5 @@ package() {
     install -Dm755 ofono-fast-dormancy.sh $pkgdir/usr/lib/systemd/system-sleep/ofono-fast-dormancy.sh
     install -Dm644 "${srcdir}/91_plasma-mobile.gschema.override" -t "${pkgdir}/usr/share/glib-2.0/schemas"
     install -Dm644 "${srcdir}/plasmamobile.json" -t "${pkgdir}/usr/share/maliit/keyboard2/devices/"
+    install -Dm644 "${srcdir}/settings.ini" -t "${pkgdir}/etc/skel/.config/gtk-3.0/"
 }

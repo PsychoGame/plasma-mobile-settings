@@ -1,7 +1,7 @@
 # Maintainer: Bernhard Landauer <oberon@manjaro.org>
 
 pkgname=plasma-mobile-settings
-pkgver=20201202
+pkgver=20201207
 pkgrel=1
 arch=('any')
 url="https://gitlab.manjaro.org/manjaro-arm/packages/community/plasma-mobile/$pkgname"
@@ -18,16 +18,20 @@ source=('applications-blacklistrc'
     'ofono-fast-dormancy.sh'
     '91_plasma-mobile.gschema.override'
     'plasmamobile.json'
+    'Breeze.json'
+    'BreezeDark.json'
     'settings.ini')
 sha256sums=('bcbe9a3e44016c71811c4323d14dbd79f259b93bae0830cfc26ebfdfdf6e1381'
             '490bd6bda16408da9bd9ac331f5dc344a4874f04f2b257a0a1083b969f7c857a'
-            '45b91431730349d796e4452faaa98a467b54e5d3a7bb32e1490944ed183b30be'
+            'f7621041edd8dde4a2d15110c5c1d902a78ac1f57a4de6ceb250e12da5db7417'
             '68bc1f74168a8d4f9c3418b37b9373d5a46d3fe550c3d5357dd3d737114abdcf'
             '97200b73d2ff5c989f0b94d9d1189a81b4e54a6746420b389067a62934c148ad'
             'e879ca7b637199e9ab5edd04c1b0c0da6b775ee925c21435f14fad426abe7e62'
             '187bd69ff45ddedb5a2f2152792bd65c0c46ee0082239e86a0d0aab654327617'
-            'ef337ce48ab85779d7cfcb54c3979a941856ddb1db9c85bf3533bb273611136a'
+            'fd5a89ce81197a912a9879aa5aa33daf68c8f80a4b70192fff89364ef9d18734'
             '42db6e099ab56aa4f6c01107fe83897a059bc371a389379cd3c260d4ab8fd2bc'
+            '40000a44b03e7b9a4ffa61eb8cdaf194b21ccb2609fb0aa6386aa14ed3aadb9d'
+            '1677f6b5b54ea43780b8683d36032f1bb3603d5072a51e058be8619e777c8790'
             'e3e671c730f7a4ed54011a1152a54e5ce11e6092850c379deb5641d88b5463bd')
 
 pkgver() {
@@ -46,4 +50,6 @@ package() {
     install -Dm644 "${srcdir}/91_plasma-mobile.gschema.override" -t "${pkgdir}/usr/share/glib-2.0/schemas"
     install -Dm644 "${srcdir}/plasmamobile.json" -t "${pkgdir}/usr/share/maliit/keyboard2/devices/"
     install -Dm644 "${srcdir}/settings.ini" -t "${pkgdir}/etc/skel/.config/gtk-3.0/"
+    install -Dm644 "${srcdir}/Breeze.json" -t "${pkgdir}/usr/share/maliit/keyboard2/themes/"
+    install -Dm644 "${srcdir}/BreezeDark.json" -t "${pkgdir}/usr/share/maliit/keyboard2/themes/"
 }

@@ -1,7 +1,7 @@
 # Maintainer: Bernhard Landauer <oberon@manjaro.org>
 
 pkgname=plasma-mobile-settings
-pkgver=20210115
+pkgver=20210119
 pkgrel=1
 arch=('any')
 url="https://gitlab.manjaro.org/manjaro-arm/packages/community/plasma-mobile/$pkgname"
@@ -21,7 +21,7 @@ source=('applications-blacklistrc'
     'Breeze.json'
     'BreezeDark.json'
     'settings.ini')
-sha256sums=('e6a1ded49bf16f23f4582fa6fe90abf52645dff6afd9a0ecf0a14532fde61e66'
+sha256sums=('5cbbcef8acdcf791af28b5c2bb68a52cce04a1367425926ae634f002a1141cc0'
             '490bd6bda16408da9bd9ac331f5dc344a4874f04f2b257a0a1083b969f7c857a'
             'f7621041edd8dde4a2d15110c5c1d902a78ac1f57a4de6ceb250e12da5db7417'
             '68bc1f74168a8d4f9c3418b37b9373d5a46d3fe550c3d5357dd3d737114abdcf'

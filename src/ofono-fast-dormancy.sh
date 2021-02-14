@@ -1,1 +1,0 @@
-/home/bernhard/manjaro/arm/packages/community/plasma-mobile/plasma-mobile-settings/ofono-fast-dormancy.sh

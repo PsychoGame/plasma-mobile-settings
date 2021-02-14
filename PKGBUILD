@@ -21,10 +21,7 @@ source=('applications-blacklistrc'
     'Breeze.json'
     'BreezeDark.json'
     'settings.ini'
-    'pico-wizard-session'
-    'pico-wizard-session.desktop'
-    'pico-wizard-wrapper'
-    '99-pico-wizard-autologin.conf')
+    'powerdevil.hook')
 sha256sums=('5cbbcef8acdcf791af28b5c2bb68a52cce04a1367425926ae634f002a1141cc0'
             '490bd6bda16408da9bd9ac331f5dc344a4874f04f2b257a0a1083b969f7c857a'
             'f7621041edd8dde4a2d15110c5c1d902a78ac1f57a4de6ceb250e12da5db7417'
@@ -37,10 +34,7 @@ sha256sums=('5cbbcef8acdcf791af28b5c2bb68a52cce04a1367425926ae634f002a1141cc0'
             '40000a44b03e7b9a4ffa61eb8cdaf194b21ccb2609fb0aa6386aa14ed3aadb9d'
             '1677f6b5b54ea43780b8683d36032f1bb3603d5072a51e058be8619e777c8790'
             'e3e671c730f7a4ed54011a1152a54e5ce11e6092850c379deb5641d88b5463bd'
-            '893a8316d2a4b6acd529f2de39461c797fed381f08349afc129156105279fb44'
-            'd1fc7d43ef3a5e7af7ef5e1a1cdffcdd287eb0db5ef6612cfe848e62551ab451'
-            '63b14b1c77aeef40bc713d5a5024780bb7bd7e2fa38b866ccaff0817897d74bf'
-            'cd540491e1cfbff44d690dfb4e59079e5797362d2937d321c27bf7e77032da6d')
+            '42c4de4c9310904ada1c84e23a34e42fcf20f8318a5f798372468381965dbd18')
 
 pkgver() {
     date +%Y%m%d
@@ -60,9 +54,6 @@ package() {
     install -Dm644 "${srcdir}/settings.ini" -t "${pkgdir}/etc/skel/.config/gtk-3.0/"
     install -Dm644 "${srcdir}/Breeze.json" -t "${pkgdir}/usr/share/maliit/keyboard2/themes/"
     install -Dm644 "${srcdir}/BreezeDark.json" -t "${pkgdir}/usr/share/maliit/keyboard2/themes/"
-    
-    install -Dm644 "${srcdir}/99-pico-wizard-autologin.conf" -t "${pkgdir}/etc/sddm.conf.d/99-pico-wizard-autologin.conf"
-    install -Dm644 "${srcdir}/pico-wizard-session" -t "${pkgdir}/usr/bin/"
-    install -Dm644 "${srcdir}/pico-wizard-wrapper" -t "${pkgdir}/usr/bin/"
-    install -Dm644 "${srcdir}/pico-wizard-session.desktop" -t "${pkgdir}/usr/share/wayland-sessions/"
+    # install alpm hook
+    install -Dm644 "$srcdir/powerdevil.hook" "$pkgdir/usr/share/libalpm/hooks/90-powerdevil.hook"    
 }

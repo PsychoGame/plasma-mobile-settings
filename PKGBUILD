@@ -1,7 +1,7 @@
 # Maintainer: Bernhard Landauer <oberon@manjaro.org>
 
 pkgname=plasma-mobile-settings
-pkgver=20210119
+pkgver=20210214
 pkgrel=1
 arch=('any')
 url="https://gitlab.manjaro.org/manjaro-arm/packages/community/plasma-mobile/$pkgname"
@@ -44,7 +44,7 @@ package() {
     install -Dm644 disable-random-mac.conf $pkgdir/etc/NetworkManager/conf.d/disable-random-mac.conf
     install -Dm644 kdeglobals $xdg/kdeglobals
     install -Dm644 kwinrc $xdg/kwinrc
-    install -Dm644 sddm.conf $pkgdir/etc/sddm.conf
+    install -Dm644 sddm.conf $pkgdir/etc/sddm.conf.d/00-default.conf
     install -Dm755 packagekit-offline.sh $pkgdir/etc/profile.d/packagekit-offline.sh
     install -Dm755 ofono-fast-dormancy.sh $pkgdir/usr/lib/systemd/system-sleep/ofono-fast-dormancy.sh
     install -Dm644 "${srcdir}/91_plasma-mobile.gschema.override" -t "${pkgdir}/usr/share/glib-2.0/schemas"

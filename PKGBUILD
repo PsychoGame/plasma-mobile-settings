@@ -20,7 +20,7 @@ source=('applications-blacklistrc'
     'plasmamobile.json'
     'settings.ini'
     'powerdevil.hook')
-sha256sums=('5cbbcef8acdcf791af28b5c2bb68a52cce04a1367425926ae634f002a1141cc0'
+sha256sums=('544bc750f6e594d38dc8c369caca10ae096b5c0c95e7a07e48555c9d556610dd'
             '490bd6bda16408da9bd9ac331f5dc344a4874f04f2b257a0a1083b969f7c857a'
             'f7621041edd8dde4a2d15110c5c1d902a78ac1f57a4de6ceb250e12da5db7417'
             '68bc1f74168a8d4f9c3418b37b9373d5a46d3fe550c3d5357dd3d737114abdcf'

@@ -21,17 +21,14 @@
 
 build-package:
   tags:
-    # change the tag to your gitlab-runner
     - aarch64
   script:
     # build pkg via chrootbuild
     - export PKG=${PWD##*/}
     - cd ..
-    - sudo chrootbuild -b arm-unstable -cp $PKG
+    - sudo chrootbuild -cp $PKG
     - mv -v ./*.pkg.tar.* $PKG
-    #- sudo pacman -Syy && makepkg -scr --noconfirm
   artifacts:
     paths:
     - ./*.pkg.tar.*
     expire_in: 1 week
-
